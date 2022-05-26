@@ -1,0 +1,25 @@
+Settings:
+  command: clearplot
+  aliases: [limpador]
+  admin-permission: clearplot.admin
+  need-permission-message: '&cVocê não possui permissão para executar esse comando!'
+
+Messages:
+  not-owner: '&cVocê precisa estar em um terreno seu!'
+  offline-player: '&cEsse jogador está offline!'
+  invalid-amount: '&cA quantia informada é inválida!'
+  command-usage: '&cUso correto: /{cmd} give <jogador> <quantia>!'
+
+Item:
+  type: GOLD_SPADE
+  glow: true
+  hide-attributes: true
+  name: '&aLimpador de Terreno &7(Botão direito)'
+  lore:
+    - '&7Use essa pá para limpar totalmente seu'
+    - '&7terreno até a bedrock!'
+
+Blocks-To-Remove:
+  - 'DIRT'
+  - 'GRASS'
+  - 'STONE'
