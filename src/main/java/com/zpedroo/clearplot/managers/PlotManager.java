@@ -34,22 +34,24 @@ public class PlotManager {
     }
 
     public void clearPlot(Plot plot) {
-        Location bottom = plot.getExtendedBottomAbs();
-        Location top = plot.getExtendedTopAbs();
+        for (Plot plots : plot.getConnectedPlots()) {
+            Location bottom = plots.getExtendedBottomAbs();
+            Location top = plots.getExtendedTopAbs();
 
-        int xMax = top.getX();
-        int xMin = bottom.getX();
+            int xMax = top.getX();
+            int xMin = bottom.getX();
 
-        int yMax = top.getY();
-        int yMin = 1;
+            int yMax = top.getY();
+            int yMin = 1;
 
-        int zMax = top.getZ();
-        int zMin = bottom.getZ();
+            int zMax = top.getZ();
+            int zMin = bottom.getZ();
 
-        Vector vectorMin = new Vector(xMin, yMin, zMin);
-        Vector vectorMax = new Vector(xMax, yMax, zMax);
+            Vector vectorMin = new Vector(xMin, yMin, zMin);
+            Vector vectorMax = new Vector(xMax, yMax, zMax);
 
-        removeBlocks(bottom, vectorMin, vectorMax);
+            removeBlocks(bottom, vectorMin, vectorMax);
+        }
     }
 
     private void removeBlocks(Location bottom, Vector vectorMin, Vector vectorMax) {
